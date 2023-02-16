@@ -63,8 +63,8 @@ def start(message):
         print(data)
         markup = telebot.types.InlineKeyboardMarkup()
         markup.add(telebot.types.InlineKeyboardButton(
-           text='🤼‍♂️ Joined', callback_data='check'))
-        msg_start = "*🍔 To Use This Bot You Need To Join This Channel - "
+           text='🤼‍ ♂️በሚገባ ተቀላቅያለሁ', callback_data='check'))
+        msg_start = "*🍔 ይህንን ቦት ለመጠቀም ቻናላችንን የሚከተለውን ሊንክ በመጫን ይቀላቀሉ - "
         for i in CHANNELS:
             msg_start += f"\n➡️ {i}\n"
         msg_start += "*"
@@ -97,8 +97,8 @@ def start(message):
         print(data)
         markups = telebot.types.InlineKeyboardMarkup()
         markups.add(telebot.types.InlineKeyboardButton(
-            text='🤼‍♂️ Joined', callback_data='check'))
-        msg_start = "*🍔 To Use This Bot You Need To Join This Channel - \n➡️ @ Fill your channels at line: 101 and 157*"
+            text='🤼‍♂️ በሚገባ ተቀላቅያለሁ', callback_data='check'))
+        msg_start = "*🍔 ይህንን ቦት ለመጠቀም ቻናላችንን የሚከተለውን ሊንክ በመጫን ይቀላቀሉ - \n➡️ @ Fill your channels at line: 101 and 157*"
         bot.send_message(user, msg_start,
                          parse_mode="Markdown", reply_markup=markups)
    except:
@@ -116,7 +116,7 @@ def query_handler(call):
             user_id = call.message.chat.id
             user = str(user_id)
             bot.answer_callback_query(
-                callback_query_id=call.id, text='✅ You joined Now yu can earn money')
+                callback_query_id=call.id, text='✅ በሚገባ ተቀላቅለዋል። አሁን ቦቱን መጠቀም ይችላሉ')
             bot.delete_message(call.message.chat.id, call.message.message_id)
             if user not in data['refer']:
                 data['refer'][user] = True
@@ -135,7 +135,7 @@ def query_handler(call):
                     data['balance'][ref] += Per_Refer
                     data['referred'][ref] += 1
                     bot.send_message(
-                        ref_id, f"*🏧 New Referral on Level 1, You Got : +{Per_Refer} {TOKEN}*", parse_mode="Markdown")
+                        ref_id, f"*🏧 አዲስ ተጠቃሚ በእርስ የመጋበዣ ሊንክ ይህንን ቦት ተቀላቅሏል። ስለዚህ : +{Per_Refer} {TOKEN} አግኝተዋል*", parse_mode="Markdown")
                     json.dump(data, open('users.json', 'w'))
                     return menu(call.message.chat.id)
 
@@ -149,7 +149,7 @@ def query_handler(call):
 
         else:
             bot.answer_callback_query(
-                callback_query_id=call.id, text='❌ You not Joined')
+                callback_query_id=call.id, text='*❌ ቻናላችንን አልተቀላቀሉም*')
             bot.delete_message(call.message.chat.id, call.message.message_id)
             markup = telebot.types.InlineKeyboardMarkup()
             markup.add(telebot.types.InlineKeyboardButton(
