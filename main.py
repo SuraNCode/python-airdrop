@@ -63,7 +63,7 @@ def start(message):
         print(data)
         markup = telebot.types.InlineKeyboardMarkup()
         markup.add(telebot.types.InlineKeyboardButton(
-           text='🤼‍ ♂️በሚገባ ተቀላቅያለሁ', callback_data='check'))
+           text='በሚገባ ተቀላቅያለሁ', callback_data='check'))
         msg_start = "*🍔 ይህንን ቦት ለመጠቀም ቻናላችንን የሚከተለውን ሊንክ በመጫን ይቀላቀሉ - "
         for i in CHANNELS:
             msg_start += f"\n➡️ {i}\n"
@@ -97,7 +97,7 @@ def start(message):
         print(data)
         markups = telebot.types.InlineKeyboardMarkup()
         markups.add(telebot.types.InlineKeyboardButton(
-            text='🤼‍♂️ በሚገባ ተቀላቅያለሁ', callback_data='check'))
+            text='በሚገባ ተቀላቅያለሁ', callback_data='check'))
         msg_start = "*🍔 ይህንን ቦት ለመጠቀም ቻናላችንን የሚከተለውን ሊንክ በመጫን ይቀላቀሉ - \n➡️ @ Fill your channels at line: 101 and 157*"
         bot.send_message(user, msg_start,
                          parse_mode="Markdown", reply_markup=markups)
@@ -153,7 +153,7 @@ def query_handler(call):
             bot.delete_message(call.message.chat.id, call.message.message_id)
             markup = telebot.types.InlineKeyboardMarkup()
             markup.add(telebot.types.InlineKeyboardButton(
-                text='🤼‍♂️ በሚገባ ተቀላቅያለሁ', callback_data='check'))
+                text='በሚገባ ተቀላቅያለሁ', callback_data='check'))
             msg_start = "*🍔 ይህንን ቦት ለመጠቀም ቻናላችንን የሚከተለውን ሊንክ በመጫን ይቀላቀሉ - \n➡️ @ Fill your channels at line: 101 and 157*"
             bot.send_message(call.message.chat.id, msg_start,
                              parse_mode="Markdown", reply_markup=markup)
